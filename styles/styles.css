@@ -1,0 +1,426 @@
+/* ========== Basic Reset ========== */
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins and padding */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+nav  ul {
+  display: flex;                  /* Horizontal list */
+  gap: 2.5rem;                    /* Spacing between nav items */
+  list-style: none;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Remove list styling */
+ul, ol {
+  list-style: none;
+  display: flex;          /* places items horizontally */
+  gap: 1.5rem;            /* optional spacing between items */
+  list-style: none;       /* removes default bullets */
+  padding: 0;             /* removes default padding */
+  margin: 0; 
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Set base font and line-height for readability */
+body {
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  #logo {
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    display: none;
+  }
+
+  .cry-banner {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .cry-face:active {
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
+  }
+}
+
+/* ========== Basic Layout ========== */
+
+/* Container for your content, centered and responsive */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+.container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+
+/* Header styling */
+header {
+  display: flex;                  /* Horizontal alignment */
+  align-items: center;            /* Vertical alignment */
+  justify-content: space-between; /* Pushes items to each side */
+  padding: 1rem 2rem;             /* Adjust padding as needed */
+  background-color: #ffcc4d;      /* Example background for visibility */
+}
+
+.sad {
+  margin: 0;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 2rem;
+  text-overflow: clip;
+  text-wrap: normal;
+}
+
+/* Main content area styling */
+main {
+  padding: 2rem 0;
+  background-color: #5dadec;
+}
+
+/* Cry-Face Banner Styling */
+#cry-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
+  padding-bottom: 1.5rem; 
+  box-sizing: border-box;
+}
+
+.cry-face {
+  flex: 1 1 auto;
+  max-width: 8%;
+  height: auto;
+  display: block;
+  transition: transform 1s ease-in-out;
+}
+
+.cry-face:hover {
+  transform: rotate(360deg);
+}
+
+/* Hero Styling */
+#hero {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 6rem;
+  background-image: linear-gradient(#5dadec88, #ffcc4d88),
+  url(../resources/img/sadboys-ground-inside.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 768px) {
+  #hero {
+    padding: 2rem; /* Reduce padding */
+    background-position: top center; /* Ensure the image centers properly */
+  }
+}
+
+.chant {
+  font-size: 3rem;
+  font-family: 'Felipa', sans-serif;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+#hero-header {
+  font-size: 9rem;
+  font-family: 'Protest Guerrilla', sans-serif;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  #hero {
+    padding: 2rem;
+  }
+
+  #hero-header {
+    font-size: 8.5rem;
+  }
+
+  .chant {
+    margin: 2rem;
+    font-size: 3rem;
+  }
+
+  #hero-header {
+    font-size: 4rem;
+  }
+
+  .chant {
+    margin: 2rem;
+    font-size: 2rem;
+  }
+
+  #news-header {
+    font-size: 2rem;
+  }
+  
+  .news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-item {
+    padding: 1rem;
+    width: 80%;
+  }
+
+}
+
+/*News Styling */
+
+/* Container for horizontal alignment */
+.news-container {
+  display: flex;
+  justify-content: space-evenly; /* positions news-items horizontally */
+  gap: 2rem;                     /* adjusts spacing between items */
+  padding: 2rem;
+  background-color: #ffcc4d;     /* or your preferred background colour */
+  flex-wrap: wrap;
+}
+
+/* Individual news items */
+.news-item {
+  position: relative;            /* for absolute positioning inside */
+  background-color: #ffcc4d;
+  color: #fff;
+  flex: 1;                       /* equal widths */
+  max-width: 600px;              /* prevents excessive width */
+  min-width: 450px;
+  overflow: hidden;
+  border-radius: 25px;            /* optional rounded corners */
+  box-shadow: #333 2px 2px 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .news-item {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+.news-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Ensures image fills container */
+.news-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text block at the bottom of image */
+.news-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  background-color: rgba(74, 74, 74, 0.7); /* semi-transparent grey background */
+  padding: 1rem;
+  color: #fff;
+  height: 35%;
+}
+
+/* Adjust text styling as needed */
+.news-text h2 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.news-text p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+#news-header {
+  text-align: left;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-size: 6rem;
+  padding-left: 2rem;
+} 
+
+@media only screen and (max-width: 768px) {
+  .news-text h2 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .news-text p {
+    display: none;
+  }
+
+}
+
+/* Results Styling */
+
+#results-header {
+  text-align: left;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-size: 6rem;
+  padding-left: 2rem;
+}
+
+.results-container {
+  background-color: #28282D;
+  padding: 2rem;
+  justify-items: center;
+  box-shadow: 2px 2px 4px #333;
+}
+
+.results-container img {
+  width: 40%;
+  height: auto;
+  display: block;
+}
+
+.results-container h2 {
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .results-container img {
+    width: 70%;
+  }
+
+  .results-container h2 {
+    font-size: 2rem;
+  }
+
+}
+
+
+/* Footer styling */
+footer {
+  background-color: #ffcc4d;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    display: none;
+  }
+}
+
+/* ========== Typography Basics ========== */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #fff;;
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a {
+  position: relative;             /* ← crucial fix */
+  display: inline-block;          /* Ensures proper sizing */
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: transparent;
+}
+
+a:hover::after {
+  color: #fff;
+  content: "😭";
+  font-size: 4rem;
+  position: absolute; /* Absolute positioning to prevent affecting other elements */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap; /* Stops text wrapping */
+  pointer-events: none;
+}
+
+/* ========== Utility Classes ========== */
+
+/* For visually hiding elements but making them accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
